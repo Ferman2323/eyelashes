@@ -2,6 +2,8 @@
 /* SIGNATURE FONT */ 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Dancing+Script&family=Merienda&family=Playfair+Display&family=Rammetto+One&display=swap');
 /* SIGNATURE FONT */ 
+/* ARROW UP FONT */ 
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
 *{
     box-sizing: border-box;
     margin: 0;
@@ -12,9 +14,9 @@ a{
     text-decoration: none;
     color: white;
 }
+
 body{
     font-family: 'Playfair Display', serif;
-    animation: loadingPage 2s; 
 }
 .box{
     width: 100%;
@@ -30,12 +32,17 @@ body{
 .nav{
     display: flex;
     justify-content:space-between;
+    animation: loadingPage 1s;
 }
 .navbar-branding{
     font-size: 1.6rem;
     color: white;
     font-weight: 700;
     margin-left: 50px;
+}
+.navbar-branding img{
+    width: 30%;
+    cursor: pointer;
 }
 .navbar-list{
     list-style: none;
@@ -49,6 +56,14 @@ font-size: 1.6rem;
 color: white;
 font-weight: 700;
 letter-spacing: 5px;
+transition: all .1s;
+}
+.navbar-list a:hover{
+    color: purple;
+    text-shadow: 1px 10px 20px black;
+}
+.nav-link:active{
+    transform: translateY(3px);
 }
 li{
     text-shadow: 0 0 50px black; 
@@ -81,6 +96,8 @@ li{
     margin-right: auto; 
     color: white;
     font-size: 1.6rem;
+    animation: loadingPage 1s;
+
 }
 .header-text h1 {
 text-align: center;
@@ -223,13 +240,15 @@ text-shadow: 0 0 30px pink;
     /* CUSTOMER REVIEW END */
     .row-clients{
         margin-top: 100px;
-        max-width: 1140px;
-        height: 100%;
+        max-width: 1200px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         margin-left: auto;
         margin-right: auto;
+    }
+    .row-clients img{
+        width: 100%;
     }
     .col-4{
         display: flex;
@@ -268,6 +287,7 @@ text-shadow: 0 0 30px pink;
     .footer{
         box-shadow: 0 0 20px black;
         background-color: #b5b5b5;
+        position: relative;
     }
     .col-3{
         color: white;
@@ -395,6 +415,8 @@ text-shadow: 0 0 30px pink;
     box-shadow: 0 0 8px black;
     text-transform: uppercase;
     font-weight: bolder;
+    animation: loadingPage 1s;
+
 
 }
 .btn-header:hover{
@@ -408,6 +430,9 @@ font-size: 17px;
 
 /* MEDIA QUERY */
 @media (max-width: 768px){
+    .navbar-branding img{
+        width: 60%;
+    }
     .hamburger{
         display: block;
         margin-right: 50px;
@@ -427,7 +452,7 @@ font-size: 17px;
         top: 110px;
         left: -1000px;
         transition: 0.3s;
-        padding: 5px;
+        width: 100%;
 
     }
     .navbar-list.active{
@@ -435,12 +460,18 @@ font-size: 17px;
         background-color: #62136dbc;
         width: 100%;
         z-index: 25;
-    }
-    .navbar-list.active li:not(last-child) {
-        margin-left: 100px;
+        font-size: 10px;
+        display: block;
     }
     .col{
         width: 100%;
+    }
+    .col-4{
+        width: 100%;
+    }
+    .col-4 img{
+        width: 100%;
+        padding: 0 50px;
     }
     .header-text h1{
         font-size: 25px;
@@ -485,8 +516,26 @@ font-size: 17px;
     .footer .col-3 img{
         width: 50%;
     }
+    .up-to-top{
+        display: none;
+    }
 
 }
+@media (max-width: 992px){
+.text-about{
+    font-size: 15px;
+}
+    .col-4{
+        width: 70%;
+    }
+    .col-4 img{
+        width: 100%;
+        padding: 0 50px;
+    }
+}
+
+
+
 /* MEDIA QUERY */
 
 
@@ -502,17 +551,7 @@ font-size: 17px;
 
     }
 }
-@keyframes loadingElement{
-    0%{
-        opacity: 0;
-        transform: translateY(100px);
-    }
-    100%{
-        opacity: 1;
-        transform: translateY(0px);
 
-    }
-}
 .overflow{
     overflow: hidden;
 }
@@ -523,4 +562,28 @@ font-size: 17px;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.up-to-top{
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.432);
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    font-family: 'Bungee Inline', cursive;
+    transition: all .1s;
+}
+.up-to-top a{
+    font-size: 50px;
+    color: white;
+    line-height: 90px;
+}
+.up-to-top:active{
+    transform: translateY(-5px);
 }
